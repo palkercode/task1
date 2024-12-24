@@ -40,12 +40,11 @@ public class Teacher extends Person {
     }
 
     public void giveRaise(int percent) {
-        // i forgor how to do that
         salary = salary + (salary / 100 * percent);
     }
 
     @Override
     public String toString() {
-        return "I teach " + subject;
+        return "I teach " + subject + "\n";
     }
 }

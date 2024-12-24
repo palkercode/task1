@@ -1,20 +1,21 @@
 import java.util.ArrayList;
 
 public class Student extends Person {
-    private static int studentID = 1;
-    private int studentIDGen;
+    private int studentID;
+    private static int studentIDGen = 1;
 
     private ArrayList<Integer> grades = new ArrayList<>();
     private float gpa;
 
     public Student() {
         super();
-        this.studentIDGen = studentID++;
+        this.studentID = studentIDGen++;
     }
 
-    public Student(String name, String surname, int age, boolean gender, ArrayList<Integer> grades) {
+    public Student(String name, String surname, int age, boolean gender, ArrayList<Integer> grades, float gpa) {
         super(name, surname, age, gender);
         this.grades = grades;
+        this.gpa = gpa;
     }
 
     public int getStudentID() {
@@ -27,17 +28,23 @@ public class Student extends Person {
     }
 
     private void calculateGPA() {
-        int gradeSum = 0;
+        // idk how to calculate gpa so i just take the average value of all grades
+
+        float gradeSum = 0;
 
         for (int grade : grades) {
             gradeSum += grade;
         }
 
-        gpa = (float) gradeSum / grades.size();
+        gpa = gradeSum / grades.size();
+    }
+
+    public float getGPA() {
+        return gpa;
     }
 
     @Override
     public String toString() {
-        return "I am a student with ID " + studentID;
+        return "I am a student with ID " + studentID + "\n";
     }
 }

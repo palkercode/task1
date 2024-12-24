@@ -16,14 +16,14 @@ public class Main {
             student.setAge(Integer.parseInt(scanner.next()));
             student.setGender(scanner.next() == "Male");
 
-            while(scanner.next().equals("\n")) {
+            while(scanner.hasNextInt()) {
                 student.addGrade(Integer.parseInt(scanner.next()));
             }
 
             school.addMember(student);
         }
 
-        scanner = new Scanner(new File("C:\\Users\\Eshkere\\IdeaProject\\untitled1\\teachers.txt"));
+        scanner = new Scanner(new File("C:\\Users\\Eshkere\\IdeaProjects\\untitled1\\teachers.txt"));
 
         while (scanner.hasNextLine()) {
             Teacher teacher = new Teacher();
@@ -40,5 +40,16 @@ public class Main {
         }
 
         System.out.println(school);
+
+        for (Teacher teacher : school.getTeachers()) {
+            if (teacher.getYearsOfExperience() > 10) {
+                teacher.giveRaise(50);
+                System.out.println("Because " + teacher.getName() + " is working in school more than 10 years, they receive 50% increase in salary. Their salary is " + teacher.getSalary() + " now.");
+            }
+        }
+
+        for (Student student : school.getStudents()) {
+            System.out.println(student.getName() + "'s GPA is " + student.getGPA());
+        }
     }
 }
