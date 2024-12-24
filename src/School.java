@@ -1,7 +1,16 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class School {
     private ArrayList<Person> members = new ArrayList<>();
+
+    public ArrayList<Person> getMembers() {
+        return members;
+    }
+
+    public void addMember(Person person) {
+        members.add(person);
+    }
 
     /*
      I used instanceof in getStudents and getTeachers to differentiate
@@ -33,8 +42,14 @@ public class School {
         return teachers;
     }
 
-    public void addMember(Person person) {
-        members.add(person);
+    public void sortMembersBySurname() {
+        for (int i = 0; i < members.size() - 1; i++) {
+            for (int j = 0; j < members.size() - i - 1; j++) {
+                if (members.get(j).getSurname().charAt(0) > members.get(j+1).getSurname().charAt(0)) {
+                    Collections.swap(members, j, j+1);
+                }
+            }
+        }
     }
 
     @Override

@@ -39,6 +39,8 @@ public class Main {
             school.addMember(teacher);
         }
 
+        school.sortMembersBySurname();
+
         System.out.println(school);
 
         for (Teacher teacher : school.getTeachers()) {
