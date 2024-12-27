@@ -12,6 +12,7 @@ public class Person {
     }
 
     public Person(String name, String surname, int age, boolean gender) {
+        this();
         this.name = name;
         this.surname = surname;
         this.age = age;
