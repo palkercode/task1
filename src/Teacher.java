@@ -45,6 +45,6 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "I teach " + subject + "\n";
+        return super.toString() + "I teach " + subject + "\n";
     }
 }
