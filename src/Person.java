@@ -1,16 +1,25 @@
 public class Person {
+    private int id;
+    private static int idGen = 1;
+
     private String name;
     private String surname;
     private int age;
     private boolean gender;
 
-    public Person() { }
+    public Person() {
+        this.id = idGen++;
+    }
 
     public Person(String name, String surname, int age, boolean gender) {
         this.name = name;
         this.surname = surname;
         this.age = age;
         this.gender = gender;
+    }
+
+    public int getId() {
+        return this.id;
     }
 
     public String getName() {

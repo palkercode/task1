@@ -1,25 +1,17 @@
 import java.util.ArrayList;
 
 public class Student extends Person {
-    private int studentID;
-    private static int studentIDGen = 1;
-
     private ArrayList<Integer> grades = new ArrayList<>();
     private float gpa;
 
     public Student() {
         super();
-        this.studentID = studentIDGen++;
     }
 
     public Student(String name, String surname, int age, boolean gender, ArrayList<Integer> grades, float gpa) {
         super(name, surname, age, gender);
         this.grades = grades;
         this.gpa = gpa;
-    }
-
-    public int getStudentID() {
-        return studentID;
     }
 
     public void addGrade(int grade) {
@@ -45,6 +37,6 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "I am a student with ID " + studentID + "\n";
+        return "I am a student with ID " + getId() + "\n";
     }
 }
