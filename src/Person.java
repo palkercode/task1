@@ -57,6 +57,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Hi, I am " + this.name + " " + this.surname + ", a " + this.age + "-year-old " + (this.gender ? "female" : "male") + "\n";
+        return "Hi, I am " + this.name + " " + this.surname + ", a " + this.age + "-year-old " + (this.gender ? "female" : "male") + ", ";
     }
 }
